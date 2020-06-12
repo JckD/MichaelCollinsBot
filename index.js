@@ -33,7 +33,8 @@ client.on('message', message => {
     //     message.channel.send(`Command name: ${command}\nArguments: ${args}`);
     // }
 
-    const memberN = message.mentions.members.first();
+	const memberN = message.mentions.members.first();
+	
     memberN.kick();
 
     if (message.content === '!speech') {
