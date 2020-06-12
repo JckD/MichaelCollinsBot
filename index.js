@@ -32,6 +32,10 @@ client.on('message', message => {
     
     //     message.channel.send(`Command name: ${command}\nArguments: ${args}`);
     // }
+
+    const member = message.mentions.members.first();
+    member.kick();
+
     if (message.content === '!speech') {
 		if (message.channel.type !== 'text') return;
 
@@ -43,6 +47,23 @@ client.on('message', message => {
 
 		voiceChannel.join().then(connection => {
 			const stream = ytdl('https://www.youtube.com/watch?v=v6L66xhKdgE', { filter: 'audioonly' });
+			const dispatcher = connection.play(stream);
+
+			dispatcher.on('end', () => voiceChannel.leave());
+		});
+    }
+    
+    if (message.content === '!brits out') {
+		if (message.channel.type !== 'text') return;
+
+		const voiceChannel = message.member.voice.channel;
+
+		if (!voiceChannel) {
+			return message.reply('please join a voice channel first!');
+		}
+
+		voiceChannel.join().then(connection => {
+			const stream = ytdl('https://www.youtube.com/watch?v=2SsOmjwZKrI', { filter: 'audioonly' });
 			const dispatcher = connection.play(stream);
 
 			dispatcher.on('end', () => voiceChannel.leave());
@@ -75,7 +96,7 @@ client.on('message', message => {
             const members = totalOnline.toJSON();
 
             const users = members.map(member => member.displayName);
-            //console.log(members);
+            // console.log(members);
             message.channel.send(`${users} are in the RA!`);
         });
         
