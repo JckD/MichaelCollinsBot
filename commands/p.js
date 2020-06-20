@@ -1,5 +1,6 @@
 module.exports = {
-	name: 'p',
+    name: 'play',
+    aliases : ['play', 'pl'],    
     description: 'Plays a youtbe video taking the URL of the video and volume for the bot to stream at.',
     args : true,
 	execute(message, args) {
