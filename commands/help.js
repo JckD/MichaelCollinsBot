@@ -20,10 +20,10 @@ module.exports = {
             return message.author.send(data, { split : true })
                 .then(() => {
                     if (message.channel.type === 'dm') return;
-                    message.reply('I\'ve snet you a DM with all my commands!');
+                    message.reply('I\'ve sent you a DM with all my commands!');
                 })
                 .catch(error => {
-                    console.error(`Could not seld help DM to ${message.author.tag}.\n`, error);
+                    console.error(`Could not send help DM to ${message.author.tag}.\n`, error);
                     message.reply('It seems like I can\'t DM you! Do you have Dms disabled?');
                 });
         }
