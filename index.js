@@ -68,7 +68,7 @@ client.on('message', message => {
 
 	if (command.args && !args.length) {
 			return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
-		}
+	}
 
 	try {
 		command.execute(message, args);

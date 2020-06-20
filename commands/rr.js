@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'rr',
-	description: 'Russian Roulette, will disconnect one random player from the voice channel that the user qho issued the command is in',
+	description: 'Russian Roulette, will disconnect one random player from the voice channel that the user who issued the command is in',
 	execute(message) {
         if (message.content === '!rr') {
 
