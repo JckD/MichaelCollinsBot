@@ -2,7 +2,7 @@ module.exports = {
 	name: 'comeout',
 	description: 'Plays Come out Ye Black and Tans from YouTube',
 	execute(message) {
-		if (message.content === '!come out') {
+		if (message.content === '!comeout') {
 
             const ytdl = require('ytdl-core');
 
