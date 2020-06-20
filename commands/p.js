@@ -16,9 +16,12 @@ module.exports = {
         // Set volume
         let volume = 0;
         // Make sure the volume argument is valid and if it is divide it by ten and set it to 'volume'
-        if (args[1] === undefined || args[1] > 10 || args[1] < 1) {
+        if (args[1] > 10 || args[1] < 1) {
             return message.reply('please give a volume for the bot play at from 1-10 separated by a space.');
         } 
+        else if (args[1] === undefined) {
+            volume = 0.5;
+        }
         else {
             volume = args[1] / 10;
         }
