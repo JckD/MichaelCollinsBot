@@ -47,7 +47,11 @@ client.on('message', message => {
 		}
 
 	try {
+<<<<<<< HEAD
 		command.execute(message, args)
+=======
+		client.commands.get(command).execute(message, args);
+>>>>>>> a1723a7c2dd53b9c72cd325561425c6170d15695
 	}
 	catch(error) {
 		console.error(error);
