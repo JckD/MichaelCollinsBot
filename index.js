@@ -28,7 +28,7 @@ client.once('ready', () => {
 	console.log('Ready!');
 });
 
-// login to Discord with your app's token
+// login to Discord with your the bots token
 client.login(token);
 
 client.on('message', message => {
