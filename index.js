@@ -36,6 +36,10 @@ client.login(token);
 
 client.on('message', message => {
 
+	if (message.webhookID) {
+		message.channel.send('That was a good one Paddy!')
+	}
+
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
