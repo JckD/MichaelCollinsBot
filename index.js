@@ -13,7 +13,6 @@ client.commands = new Discord.Collection();
 // returns an array of all the files names
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
-
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
 
